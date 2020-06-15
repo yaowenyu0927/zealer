@@ -1,0 +1,17 @@
+com\zealer\controller\UserController.class
+com\zealer\entity\ProductExample.class
+com\zealer\service\impl\PictureServiceImpl.class
+com\zealer\entity\ProductExample$Criteria.class
+com\zealer\entity\PictureExample$GeneratedCriteria.class
+com\zealer\entity\ProductExample$GeneratedCriteria.class
+com\zealer\entity\Picture.class
+com\zealer\controller\PictureController.class
+com\zealer\entity\PictureExample.class
+com\zealer\mapping\PictureMapper.class
+com\zealer\service\PictureService.class
+com\zealer\entity\PictureExample$Criterion.class
+com\zealer\entity\Product.class
+com\zealer\entity\PictureExample$Criteria.class
+com\zealer\mapping\ProductMapper.class
+com\zealer\TestGenerator.class
+com\zealer\entity\ProductExample$Criterion.class
