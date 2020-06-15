@@ -1,18 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	   http://www.springframework.org/schema/mvc
+       https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                    <value>application/json;charset=utf-8</value>
+                    <value>text/json;charset=utf-8</value>
+                    <value>text/html;charset=utf-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+
 
     <!--添加mvc分层之后，spring扫描的是Service层-->
     <context:component-scan base-package="com.zealer"></context:component-scan>
-
-   <!--***********************Mybatis和Spring整合*******************************-->
-    <!--mybatis配置文件中添加哪些配置文件？
-            两个必须：environments数据源、mappers映射文件配置
-            在String配置文件整合其他配置：别名、settings等，加载mybatis配置文件
-            添加SqlSessionFactory配置，SqlSession 接口方法
-            通过Bean标签体现-->
 
     <!--添加db.properties文件-->
     <bean id="db" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">

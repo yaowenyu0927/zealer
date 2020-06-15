@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @Controller
 public class UserController {
+
 
     @RequestMapping("/hello")
     public String hello(){
@@ -34,4 +36,5 @@ public class UserController {
             return "登录失败";
         }
     }
+
 }
